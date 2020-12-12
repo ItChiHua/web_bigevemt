@@ -20,18 +20,18 @@
       "unicode_decimal": 59213
     },
     {
+      "icon_id": "8838868",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
       "icon_id": "8989922",
       "name": "个人中心",
       "font_class": "ren",
       "unicode": "e511",
       "unicode_decimal": 58641
-    },
-    {
-      "icon_id": "13868585",
-      "name": "类别",
-      "font_class": "leibie",
-      "unicode": "e607",
-      "unicode_decimal": 58887
     },
     {
       "icon_id": "15173164",

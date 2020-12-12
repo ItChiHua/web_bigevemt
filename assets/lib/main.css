@@ -1,0 +1,72 @@
+html,body{
+    padding: 15px 10px;
+    margin: 0;
+    background-color: #eee;
+}
+.outbox{
+    width: 100%;
+    margin-bottom: 200px;
+}
+.box{
+    box-sizing: border-box;
+    width: 22.75%;
+    margin-left: 3%;
+    height: 160px;
+    background-color: rgb(250,253,250);
+    float: left;
+    border: 1px solid #ccc;
+}
+.box:nth-child(1){
+    margin-left: 0;
+}
+.topbox{
+    height: 120px;
+    text-align: center;
+}
+.topbox p{
+    color: rgb(133,160, 228);
+    margin: 0;
+    line-height: 120px;
+}
+.topbox p i{
+    font-size: 60px;
+    font-style: normal;
+}
+.botbox{
+    height: 38px;
+    background-color: rgb(225, 227, 224);
+    text-align: center;
+    line-height: 40px;
+}
+.box:nth-child(2) .topbox p{
+    color: rgb(105,195, 222);
+}
+.box:nth-child(3) .topbox p{
+    color: rgb(97,213, 218);
+}
+.box:nth-child(4) .topbox p{
+    color: rgb(89,213,140);
+}
+
+.echarts01{
+    width: 70%;
+    height: 450px;
+    padding: 15px 0;
+    background-color:rgb(250,253,250);
+    margin-right: 3%;
+    float: left;
+}
+.echarts02{
+    width: 27%;
+    height: 450px;
+    padding: 15px 0;
+    background-color:rgb(250,253,250);
+    float: left;
+}
+.echarts03{
+    width: 100%;
+    height: 550px;
+    padding: 15px 0;
+    background-color:rgb(250,253,250);
+    margin-top: 730px;
+}
