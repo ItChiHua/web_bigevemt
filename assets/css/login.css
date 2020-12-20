@@ -4,7 +4,7 @@ body{
     margin: 0;
     height: 100%;
     width: 100%;
-    background: url('/assets/images/bg.jfif') no-repeat center;
+    background: url('../images/bg.jfif') no-repeat center;
     background-size: 100% 100%;
 }
 .loginAndRegBox{
@@ -19,7 +19,7 @@ body{
 .title_box{
     height: 60px;
     margin: 10px 0;
-    background: url('/assets/images/login-title.png') no-repeat center;
+    background: url('../images/login-title.png') no-repeat center;
     background-size: 35%;
 }
 

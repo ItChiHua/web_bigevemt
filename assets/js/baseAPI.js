@@ -22,7 +22,7 @@ $.ajaxPrefilter(function(options){
             // 强制清空token
             localStorage.removeItem('token')
             // 强制跳转回登录页面
-            location.href = '/login.html'
+            location.href = 'login.html'
         }
     }
 })
