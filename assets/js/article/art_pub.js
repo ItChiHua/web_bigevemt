@@ -29,8 +29,6 @@ $(function(){
     }
 
 
-
-
     //封面裁剪效果
     // 初始化图片裁剪器
     var $image = $('#image')
@@ -85,6 +83,20 @@ $(function(){
         var fd = new FormData($(this)[0])
         // 将文章的发布状态存到fd中
         fd.append('state', art_state)
+        
+        var cateId = fd.get('cate_id')
+
+        $.ajax({
+            method: 'GET',
+            url: '/my/article/cates/' + cateId,
+            async : false,
+            success: function(res){
+                // console.log(typeof res.data.name);
+                // console.log(typeof art_state);
+                var nm = res.data.name
+                window.nm = nm
+            }
+        })
         // 将封面裁剪过后的图片输出为一个文件对象
         $image
             .cropper('getCroppedCanvas', {
@@ -96,15 +108,16 @@ $(function(){
               //将Canvas画布上的内容 转换为文件对象 并进行后续操作
               // 将文件对象存储到fd中
               fd.append('cover_img', blob)
-              // 发起ajax数据请求
-              publishArticle(fd)
-            var cate_id = fd.get("cate_id")
-            console.log(cate_id);
-            fd.forEach(function(v, k) {
-                console.log(k, v);
-            })
+              // 发起ajax数据请
+
+              publishArticle(fd) 
         })
-            
+
+        fd.append("cate_name", nm)
+
+        fd.forEach(function(v, k) {
+            console.log(k, v);
+        })
     })
     // 定义一个发布文章的方法
     function publishArticle(fd){
