@@ -21,11 +21,15 @@ $(function(){
                 // 调用模板引擎 渲染分类的下拉菜单
                 var htmlStr = template('tpl-cate', res)
                 $('[name=cate_id').html(htmlStr)
+                console.log(res.data);            
                 // 一定要调用 form.render()方法
                 form.render()
             }
         })
     }
+
+
+
 
     //封面裁剪效果
     // 初始化图片裁剪器
@@ -66,11 +70,12 @@ $(function(){
     // 定义文章的状态
     var art_state = '已发布'
 
-
     // 为存为草稿按钮绑定点击事件处理函数
     $('#btnSave2').on('click',function(){
-        art_state = '草稿'
+        art_state = '草稿' 
     })
+
+    // fd.append('cate_name', )
 
     // 为表单绑定submit提交事件
     $('#form-pub').on('submit', function(e){
@@ -82,25 +87,25 @@ $(function(){
         fd.append('state', art_state)
         // 将封面裁剪过后的图片输出为一个文件对象
         $image
-          .cropper('getCroppedCanvas', {
-            // 创建一个Canvas画布
-            width: 400,
-            height: 200
-          })
-          .toBlob(function(blob){
-            //将Canvas画布上的内容 转换为文件对象 并进行后续操作
-            // 将文件对象存储到fd中
-            fd.append('cover_img', blob)
-            // 发起ajax数据请求
-            publishArticle(fd)
-          })
-
-          fd.forEach(function(v,k){
-              console.log(k,v);
-          })
+            .cropper('getCroppedCanvas', {
+              // 创建一个Canvas画布
+              width: 400,
+              height: 280
+            })
+            .toBlob(function (blob){
+              //将Canvas画布上的内容 转换为文件对象 并进行后续操作
+              // 将文件对象存储到fd中
+              fd.append('cover_img', blob)
+              // 发起ajax数据请求
+              publishArticle(fd)
+            var cate_id = fd.get("cate_id")
+            console.log(cate_id);
+            fd.forEach(function(v, k) {
+                console.log(k, v);
+            })
+        })
+            
     })
-
-
     // 定义一个发布文章的方法
     function publishArticle(fd){
         $.ajax({
@@ -117,7 +122,7 @@ $(function(){
                 }
                 layer.msg('发布文章成功！')
                 // 发布文章成功后 跳转到文章列表页面
-                location.href = '/article/art_list.html'
+                location.href = '../article/art_list.html'
             }
         })
     }

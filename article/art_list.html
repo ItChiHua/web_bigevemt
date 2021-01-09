@@ -60,7 +60,7 @@
         <tr>
             <td>{{$value.title}}</td>
             <td>{{$value.cate_name}}</td>
-            <td>{{$value.pub_date|dataFormat}}</td>
+            <td>{{$value.pub_date}}</td>
             <td>{{$value.state}}</td>
             <td>
                 <button type="button" class="layui-btn layui-btn-xs">编辑</button>
@@ -74,7 +74,7 @@
     <script type="text/html" id="tpl-cate">
         <option value="">所有分类</option>
         {{each data}}
-        <option value="{{$value.Id}}">{{$value.name}}</option>
+        <option value="{{$value.id}}">{{$value.name}}</option>
         {{/each}}
     </script>
 

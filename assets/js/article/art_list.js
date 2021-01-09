@@ -43,12 +43,13 @@ $(function(){
             url: '/my/article/list',
             data: q,
             success: function(res){
-                // console.log(res);
+                console.log(res);
                 if(res.status !== 0){
                     return layer.msg('获取文章内容失败！')
                 }
                 // 使用模板引擎渲染页面数据
-                var htmlStr = template('tpl-table',res.data)
+                layer.msg('获取文章内容成功！')
+                var htmlStr = template('tpl-table', res)
                 $('tbody').html(htmlStr)
             }
         })
