@@ -134,7 +134,7 @@ $(function(){
                     return layer.msg('发布文章失败！')
                 }
                 layer.msg('发布文章成功！')
-                // 发布文章成功后 跳转到文章列表页面
+                // 发布文章成功后 跳转到文章列表的页面  警告
                 location.href = './art_list.html'
             }
         })
